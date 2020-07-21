@@ -1,4 +1,4 @@
-import * as THREE from 'three';
+// import * as THREE from 'three';
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000);
@@ -23,7 +23,7 @@ const colors = [
 let geometry = new THREE.SphereBufferGeometry(40, 32, 16);
 
 let balls = [];
-
+let yIndex = -240;
 colors.forEach((color, index) => {
     let material = new THREE.MeshPhysicalMaterial({
         color: color,
@@ -35,11 +35,12 @@ colors.forEach((color, index) => {
     });
 
     let mesh = new THREE.Mesh(geometry, material);
-    mesh.position.x = (index * 150 - 200);
-    mesh.position.y = -50;
-    mesh.position.z = -(index * 150 - 200);
+    // mesh.position.x = (index * 150 - 200);
+    // mesh.position.y = yIndex;
+    // mesh.position.z = -(index * 150 - 200);
     scene.add(mesh);
     balls.push(mesh);
+    yIndex += 83;
 });
 
 let particleLight = new THREE.Mesh(new THREE.SphereBufferGeometry(4, 8, 8), new THREE.MeshBasicMaterial({color: 0xffffff}));
@@ -56,15 +57,14 @@ particleLight.add(pointLight);
 function animate() {
     requestAnimationFrame( animate );
     let timer = Date.now() * 0.00012;
-
     particleLight.position.x = Math.sin(-timer ) * 300;
     particleLight.position.y = Math.cos(-timer) * 400;
     particleLight.position.z = Math.cos(-timer) * 300;
 
     balls.forEach((ball, index) => {
-        ball.position.x = Math.sin(timer * (index + 1)) * 300;
+        ball.position.x = Math.sin(timer * (6 - index)) * 300;
         ball.position.y = Math.cos(timer * (index + 1)) * 200;
-        // ball.position.z = Math.cos(timer * (6 - index)) * 200 + (index * 50) - 200
+        ball.position.z = Math.cos(timer * (6 - index)) * 200 + (index * 50) - 200
 
     });
 
