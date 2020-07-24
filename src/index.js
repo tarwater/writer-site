@@ -3,7 +3,7 @@
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000);
 const canvas = document.getElementById("canvas");
-const renderer = new THREE.WebGLRenderer({canvas: canvas, antialias: true});
+const renderer = new THREE.WebGLRenderer({canvas: canvas, antialias: true, precision: "mediump" });
 
 camera.position.z = 600;
 
