@@ -1,7 +1,7 @@
 
 .cache/
 coverage/
-
+.idea/
 node_modules/
 *.log
 

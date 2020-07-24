@@ -44,7 +44,7 @@ colors.forEach((color, index) => {
     yIndex += 83;
 });
 
-let particleLight = new THREE.Mesh(new THREE.SphereBufferGeometry(4, 8, 8), new THREE.MeshBasicMaterial({color: 0xffffff}));
+let particleLight = new THREE.Mesh(new THREE.SphereBufferGeometry(4, 8, 8), new THREE.MeshBasicMaterial({color: 0xffffff, precision: "mediump"}));
 scene.add(particleLight);
 scene.add(new THREE.AmbientLight("#dcdcdc"));
 
