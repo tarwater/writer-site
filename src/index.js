@@ -25,7 +25,7 @@ let geometry = new THREE.SphereBufferGeometry(40, 32, 16);
 let balls = [];
 let yIndex = -240;
 colors.forEach((color, index) => {
-    let material = new THREE.MeshPhysicalMaterial({
+    let material = new THREE.MeshLambertMaterial({
         color: color,
         metalness: 0,
         roughness: 0.5,
@@ -43,7 +43,7 @@ colors.forEach((color, index) => {
     yIndex += 83;
 });
 
-let particleLight = new THREE.Mesh(new THREE.SphereBufferGeometry(4, 8, 8), new THREE.MeshLambertMaterial({color: 0xffffff}));
+let particleLight = new THREE.Mesh(new THREE.SphereBufferGeometry(4, 8, 8), new THREE.MeshBasicMaterial({color: 0xffffff}));
 scene.add(particleLight);
 scene.add(new THREE.AmbientLight("#dcdcdc"));
 
