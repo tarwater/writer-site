@@ -32,6 +32,7 @@ colors.forEach((color, index) => {
         clearcoat: 1,
         reflectivity: 1,
         envMap: null,
+        precision: "mediump"
     });
 
     let mesh = new THREE.Mesh(geometry, material);
