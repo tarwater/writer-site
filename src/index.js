@@ -25,7 +25,7 @@ let geometry = new THREE.SphereBufferGeometry(40, 32, 16);
 let balls = [];
 let yIndex = -240;
 colors.forEach((color, index) => {
-    let material = new THREE.MeshLambertMaterial({
+    let material = new THREE.MeshPhysicalMaterial({
         color: color,
         metalness: 0,
         roughness: 0.5,
