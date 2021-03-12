@@ -2,10 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa7b584a-e231-4240-b07b-112591e73b98" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/three.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpack.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -120,7 +116,7 @@
       <updated>1586369529158</updated>
       <workItem from="1586369530348" duration="1993000" />
       <workItem from="1595610590882" duration="3326000" />
-      <workItem from="1615583384689" duration="1476000" />
+      <workItem from="1615583384689" duration="1751000" />
     </task>
     <task id="LOCAL-00001" summary="changed animation">
       <created>1595359899075</created>
@@ -178,7 +174,14 @@
       <option name="project" value="LOCAL" />
       <updated>1595612892854</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="bundling three.js">
+      <created>1615585384375</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1615585384375</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
@@ -246,7 +249,8 @@
     <MESSAGE value="another possible mobile fix" />
     <MESSAGE value="fml" />
     <MESSAGE value="last try" />
-    <option name="LAST_COMMIT_MESSAGE" value="last try" />
+    <MESSAGE value="bundling three.js" />
+    <option name="LAST_COMMIT_MESSAGE" value="bundling three.js" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/reset.css" />
