@@ -1,4 +1,4 @@
-// import * as THREE from 'three';
+import * as THREE from 'three';
 
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000);
@@ -103,7 +103,6 @@ function animate() {
 
     if(Math.abs(x) > 2000 || Math.abs(y) > 2000){
         clearInterval(interval);
-        console.log("STOPPED");
     }
 }
 

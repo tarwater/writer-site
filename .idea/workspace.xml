@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="aa7b584a-e231-4240-b07b-112591e73b98" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/dist/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -272,7 +270,8 @@
     <MESSAGE value="fml" />
     <MESSAGE value="last try" />
     <MESSAGE value="bundling three.js" />
-    <option name="LAST_COMMIT_MESSAGE" value="bundling three.js" />
+    <MESSAGE value="new animation" />
+    <option name="LAST_COMMIT_MESSAGE" value="new animation" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/reset.css" />
