@@ -49,8 +49,8 @@ function nextPoint(){
     xNoise += dx;
     yNoise += dy;
 
-    x = Math.sin(counter * (Math.PI / 180)) * (counter * .1) + xNoise
-    y = Math.cos(counter * (Math.PI / 180)) * (counter * .1) + yNoise
+    x = Math.sin(counter * .1) * (counter * .1) + xNoise
+    y = Math.cos(counter * .1) * (counter * .1) + yNoise
 
     return new Vector3(x, y, 0);
 }
@@ -67,22 +67,26 @@ function nextColor(){
     }
 }
 
-let interval = setInterval(animate, 15);
+let interval = setInterval(animate, 25);
 
 function animate() {
     counter++;
     let p = nextPoint();
     points.push(p);
 
-    let geometry = new BufferGeometry().setFromPoints(points);
-    let material = new LineBasicMaterial({color: color});
-    let line = new Line(geometry, material);
-    // scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(points), new THREE.LineBasicMaterial({color: color})));
-    scene.add(line);
-    renderer.render(scene, camera);
+    if(points.length >= 5){
+        let geometry = new BufferGeometry().setFromPoints(points);
+        let material = new LineBasicMaterial({color: color});
+        let line = new Line(geometry, material);
+        // scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(points), new THREE.LineBasicMaterial({color: color})));
+        scene.add(line);
+        renderer.render(scene, camera);
+        points = points.slice(points.length - 1);
+    }
+
 
     if(counter % 120 === 0){
-        points = points.slice(points.length - 1);
+        // points = points.slice(points.length - 1);
         nextColor();
         MAX_DRIFT += driftX
         dx *= (1 + .1 * Math.random());
@@ -101,6 +105,7 @@ function animate() {
     }
 
     if(Math.abs(x) > 2000 || Math.abs(y) > 2000){
+        console.log("finished");
         clearInterval(interval);
     }
 }
