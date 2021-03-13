@@ -1,17 +1,18 @@
-import * as THREE from 'three';
+import {Scene, PerspectiveCamera, WebGLRenderer, Color, Vector3,
+BufferGeometry, LineBasicMaterial, Line} from 'three';
 
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000);
+const scene = new Scene();
+const camera = new PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 2000);
 const canvas = document.getElementById("canvas");
 canvas.width = canvas.width *  2;
  canvas.height = canvas.height * 2;
 
-const renderer = new THREE.WebGLRenderer({canvas: canvas, antialias: true, precision: "mediump"});
+const renderer = new WebGLRenderer({canvas: canvas, antialias: true, precision: "mediump"});
 
 camera.position.z = 600;
 
 renderer.setSize(window.innerWidth, window.innerHeight);
-scene.background = new THREE.Color('white');
+scene.background = new Color('white');
 const white = 0xFFFFFF;  // white
 // scene.fog = new THREE.FogExp2(white, 0.0006);
 const colors = [
@@ -51,7 +52,7 @@ function nextPoint(){
     x = Math.sin(counter * (Math.PI / 180)) * (counter * .1) + xNoise
     y = Math.cos(counter * (Math.PI / 180)) * (counter * .1) + yNoise
 
-    return new THREE.Vector3(x, y,
+    return new Vector3(x, y,
         0);
 }
 
@@ -59,12 +60,12 @@ function nextColor(){
 
     let r = Math.random();
 
-    if(r <= 0.5){
-        color = "#bfbfbf";
-    } else {
+    // if(r <= 0.5){
+        // color = "#bfbfbf";
+    // } else {
         color = colors.shift();
         colors.push(color);
-    }
+    // }
 
 
 }
@@ -75,9 +76,9 @@ function animate() {
     let p = nextPoint();
     points.push(p);
 
-    let geometry = new THREE.BufferGeometry().setFromPoints(points);
-    let material = new THREE.LineBasicMaterial({color: color});
-    let line = new THREE.Line(geometry, material);
+    let geometry = new BufferGeometry().setFromPoints(points);
+    let material = new LineBasicMaterial({color: color});
+    let line = new Line(geometry, material);
     // scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(points), new THREE.LineBasicMaterial({color: color})));
     scene.add(line);
     renderer.render(scene, camera);
