@@ -7,7 +7,10 @@ const config = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
-  watch: false
+  watchOptions: {
+    aggregateTimeout: 200,
+    poll: 1000,
+  }
 };
 
 module.exports = config;
