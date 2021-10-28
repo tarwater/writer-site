@@ -13,7 +13,6 @@ camera.position.z = 600;
 
 renderer.setSize(window.innerWidth, window.innerHeight);
 scene.background = new Color('white');
-const white = 0xFFFFFF;  // white
 
 const colors = [
     '#fba4ff',
@@ -78,7 +77,6 @@ function animate() {
         let geometry = new BufferGeometry().setFromPoints(points);
         let material = new LineBasicMaterial({color: color});
         let line = new Line(geometry, material);
-        // scene.add(new THREE.Line(new THREE.BufferGeometry().setFromPoints(points), new THREE.LineBasicMaterial({color: color})));
         scene.add(line);
         renderer.render(scene, camera);
         points = points.slice(points.length - 1);
@@ -86,7 +84,6 @@ function animate() {
 
 
     if(counter % 120 === 0){
-        // points = points.slice(points.length - 1);
         nextColor();
         MAX_DRIFT += driftX
         dx *= (1 + .1 * Math.random());
@@ -95,13 +92,6 @@ function animate() {
         if(MAX_DRIFT % 40 === 0){
             driftX = driftX * 2;
         }
-
-        // document.getElementById("x").innerText = x;
-        // document.getElementById("y").innerText = y;
-        // document.getElementById("dx").innerText = dx;
-        // document.getElementById("dy").innerText = dy;
-        // document.getElementById("driftx").innerText = driftX;
-        // document.getElementById("max-drift").innerText = MAX_DRIFT;
     }
 
     if(Math.abs(x) > 2000 || Math.abs(y) > 2000){
